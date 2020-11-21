@@ -1,5 +1,7 @@
 # Neural Decoder Group Project
 
 The aim of this group project was to design a causal neural decoder in MATLAB, designed to drive a hypothetical prosthetic device, which is a realistic and difficult task in brain-machine interfacing. Spike trains recorded from a monkey's brain were provide, as it repeatedly performs an arm movement task. The developed algorithm was able to estimate, from these data, the precise trajectory (X & Y position) of the monkey's hand at each moment in time as it reaches for the target. 
+
 The developed MATLAB function accepts two arguments: a set of training data (that includes reaching angles and trajectory data), and a set of test data (which only has spike trains and are not included in the training data). The function then returns the appropriate angle classification and position estimation.
+
 Three different classifiers were implemented for identifying reaching angle: k-Nearest Neighbors (k-NN), Support Vector Machine (SVM) and Bayesian. Majority voting was used to select the most likely direction, obtaining a final angle classification accuracy of 99.75%. Principal Component Regression (PCR) was used to estimate the x and y hand positions as a function of time obtaining a Root Mean Square Error (RMSE) of 𝟕.𝟑𝟕±𝟎.𝟔𝟕 with the optimal number of principal components. Non-Linear Least Means Squares (N-LMS) algorithm was also implemented for x and y hand position estimation but was inferior to results obtained using PCR both in terms of RMSE and computational time.
